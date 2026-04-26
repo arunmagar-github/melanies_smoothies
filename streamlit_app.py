@@ -32,7 +32,7 @@ if ingredients_list:
     ingredients_string+=friut_chosen + ' '
     st.subheader(friut_chosen + ' Nutrition Information')
     smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + friut_chosen)
-    sf_df = st.dataframe(data=smoothiefroot_response.json(),use_container_width=False,width="stretch")
+    sf_df = st.dataframe(data=smoothiefroot_response.json(),width="stretch")
 
 my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order) values ('""" + ingredients_string + """','""" + name_on_order + """' )"""
 
